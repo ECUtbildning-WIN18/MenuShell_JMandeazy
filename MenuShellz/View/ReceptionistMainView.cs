@@ -9,7 +9,8 @@ namespace MenuShellz.View
             base.Display();
             Console.WriteLine("(1) List all users");
             Console.WriteLine("(2) Exit");
-            
+            return Console.ReadKey().Key.ToString();
+
             /*var consoleKeyInfo = Console.ReadKey();
 
             switch (consoleKeyInfo.Key)
@@ -19,7 +20,7 @@ namespace MenuShellz.View
                 case ConsoleKey.D2:
                     return "2";
                     default:*/
-                    return "";
+            
             }
         }
     }

@@ -28,7 +28,7 @@ namespace MenuShellz
             var printUser = new PrintUser(); 
             var authentication = new AuthenticationServices();
             var deleteUser = new DeleteUser();
-            var result = receptionistMainView.Display();
+            string result;
             User onlineUser = null;
             
             do
@@ -55,22 +55,22 @@ namespace MenuShellz
             {
                 if (onlineUser.Role == "Receptionist")
                 {
-                    result = receptionistMainView.Display();
+                    result = receptionistMainView.Display();  
                     switch (result)
                     {
-                        case "1":
-                            printUser.Display();
-                            printUser.ListAllUsers(users);
+                        case "D1":
+                            result = printUser.Display();                           
+                             printUser.ListAllUsers(users);       
                             break;
 
-                        case "2":
-                            Console.WriteLine("Welcome back");
+                        case "D2":
                             Environment.Exit(0);
                             break;
 
                         default:
                             Console.WriteLine("Wrong input, try again!");
-                            break;
+                            Thread.Sleep(2000);
+                            break;            
                     }
                 }
                 else if (onlineUser.Role == "Administrator")
@@ -106,7 +106,7 @@ namespace MenuShellz
                             break;
                     }
                 }
-            } while (onlineUser != null);
+            } while (onlineUser == null);
 
         }
     }
