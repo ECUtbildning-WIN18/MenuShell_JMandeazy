@@ -80,12 +80,12 @@ namespace MenuShellz
                     {
                         case "1":
                             result = manageUser.Display();
-                            if (result.ToUpper() == "1")
+                            if (result == "1")
                             {
                                 adminAddUser.Display();
                                 registerUser.AddNewUser(adminAddUser.UserName, adminAddUser.Password, adminAddUser.Role, users);
                             }
-                            else if (result.ToUpper() == "2")
+                            else if (result == "2")
                             {
                                 adminDeleteUser.Display();
                                 deleteUser.RemoveUser(users);
@@ -106,7 +106,7 @@ namespace MenuShellz
                             break;
                     }
                 }
-            } while (onlineUser == null);
+            } while (onlineUser != null);
 
         }
     }
